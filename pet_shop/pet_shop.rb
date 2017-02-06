@@ -57,8 +57,7 @@ end
 
 
 def add_pet_to_stock(hash, new_pet)
-  shop = hash[:pets]
-  shop.push(new_pet)
+  hash[:pets].push(new_pet)
 end
 
 def customer_pet_count(pet_location)
@@ -69,4 +68,10 @@ def add_pet_to_customer(customer, new_pet)
   return customer[:pets].push(new_pet).length
 end
 
+# OPTIONAL
+# 1
+
+def customer_can_afford_pet(person, new_pet)
+   person[:cash] >= new_pet[:price]
+end
 
