@@ -24,4 +24,11 @@ class Artists
     return artists
   end
 
+  def albums()
+    sql = "SELECT * FROM albums WHERE artists_id = #{@id};"
+    result = SqlRunner.run(sql)
+    albums = result.map {|album_hash| Album.new(album_hash)}
+    return albums
+  end
+
 end
