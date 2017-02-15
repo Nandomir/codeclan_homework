@@ -4,6 +4,7 @@ require_relative('./modules/artists.rb')
 require_relative('./modules/albums.rb')
 
 Album.delete_all
+Artists.delete_all
 
 
 artist1 = Artists.new(
