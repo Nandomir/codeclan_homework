@@ -31,12 +31,12 @@ class Artists
     return albums
   end
 
-  def self.delete_all
+  def self.delete_all()
     sql = "DELETE FROM artists;"
     SqlRunner.run(sql)
   end
 
-  def delete
+  def delete()
     sql = "DELETE FROM artists WHERE id = #{@id};"
     SqlRunner.run(sql)
   end
@@ -45,6 +45,12 @@ class Artists
     sql = "UPDATE artists SET (name) = ('#{name}') WHERE id = #{@id};"
     SqlRunner.run(sql)
     return "Artist updated"
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM artists WHERE id = #{id};"
+    array_of_artists = SqlRunner.run(sql)
+    return Artists.new(array_of_artists.first)
   end
 
 end
