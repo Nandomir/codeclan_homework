@@ -5,7 +5,7 @@ class Artists
 
   def initialize(options)
     @name = options['name']
-    @id = options['id']
+    @id = options['id'].to_i if options['id']
   end
 
 
