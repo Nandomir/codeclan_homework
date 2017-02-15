@@ -49,4 +49,10 @@ class Album
     return "Update complete"
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM albums WHERE id = #{id};"
+    array_of_albums = SqlRunner.run(sql)
+    return Album.new(array_of_albums.first)
+  end
+
 end
