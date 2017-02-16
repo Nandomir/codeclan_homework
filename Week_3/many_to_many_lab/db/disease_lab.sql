@@ -1,0 +1,25 @@
+DROP TABLE IF EXISTS infections;
+DROP TABLE IF EXISTS hosts;
+DROP TABLE IF EXISTS parasites;
+
+
+CREATE TABLE hosts (
+id SERIAL4 PRIMARY KEY,
+name VARCHAR(255),
+type VARCHAR(255)
+);
+
+CREATE TABLE parasites (
+id SERIAL4 PRIMARY KEY,
+name VARCHAR(255),
+effect VARCHAR(255)
+);
+
+CREATE TABLE infections (
+id SERIAL4 PRIMARY KEY,
+name VARCHAR(255),
+method_of_infection VARCHAR(255),
+host_id INT4 REFERENCES hosts(id) ON DELETE CASCADE,
+parasite_id INT4 REFERENCES parasites(id) ON DELETE CASCADE
+);
+
