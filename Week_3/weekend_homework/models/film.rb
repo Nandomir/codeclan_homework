@@ -28,9 +28,16 @@ def update()
   return "Movie details updated"
 end
 
-def update()
+def delete()
   sql = "DELETE FROM film WHERE id = #{@id}"
   SqlRunner.run(sql)
+end
+
+def self.all()
+  sql = "SELECT * FROM films;"
+  show_films = SqlRunner.run(sql)
+    result = show_films.map{|customer| Customer.new(customer)}
+    return result  #an array of new objects
 end
 
 end

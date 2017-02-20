@@ -34,4 +34,11 @@ def update()
   SqlRunner.run(sql)
 end
 
+def self.all()
+  sql = "SELECT * FROM tickets;"
+  show_tickets = SqlRunner.run(sql)
+  result = show_tickets.map{|tickets| Ticket.new(tickets)}
+  return result
+end
+
 end

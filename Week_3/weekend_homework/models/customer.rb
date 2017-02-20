@@ -13,12 +13,6 @@ end
 
 def save()
   sql = "INSERT INTO customers (name, funds) VALUES ('#{@name}', #{@funds}) RETURNING *;"
-  # array_of_objects = SqlRunner.run(sql)
-  # one_object_saved = array_of_objects.map {|customer| Customer.new(customer)}
-  # id_string = one_object_saved[0].id
-  # @id = id_string.to_i
-
-
   customer = SqlRunner.run(sql).first
   @id = customer['id'].to_i
 end
@@ -39,5 +33,37 @@ def delete()
   SqlRunner.run(sql)
   return "Customer deleted"
 end
+
+def self.all()
+  sql = "SELECT * FROM customers;"
+  show_customers = SqlRunner.run(sql)
+  result = show_customers.map{|customer| Customer.new(customer)}
+  return result
+end
+
+def funds()
+  sql = "SELECT funds FROM customers WHERE id = #{@id};"
+  array_of_funds = SqlRunner.run(sql).first
+  @id = array_of_funds['id'].to_i # why 0?
+end
+
+def films()
+  sql = "SELECT films.title FROM films
+        JOIN tickets
+        ON tickets.film_id = films.id
+        WHERE customer_id = #{@id}"
+  result = SqlRunner.run(sql).last 
+  return result.map {|films| Customer.new(films)}
+end
+
+
+# def films()
+#   sql = "SELECT customers.name FROM customers
+#         JOIN films.title from films 
+#         ON tickets.customer_id = customer.id
+#         WHERE film_id = #{@id}"
+#   result = SqlRunner.run(sql) 
+#   return result.map {|films| Customer.new(films)}
+# end
 
 end
