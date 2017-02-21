@@ -1,0 +1,35 @@
+<!doctype html>
+<hmtl lang='en'>
+  <head>
+  <meta charset='utf-8'>
+  <title>RPS game</title>
+    <body>
+      <%= yield %>
+      <nav>
+
+        <p>Select:</p>
+        <form action="/rock" method="get">
+        <button type="submit" value="rock" name="game">Rock</button>
+        </form>
+        <form action="/" method="/paper">
+        <button type="submit" value="paper" name="game">Paper</button>
+        </form>
+        <form action="/" method="/scissors">
+        <button type="submit" value="scissors" name="game">Scissors</button>
+        </form>
+
+        <!-- <ol>
+          <li>
+            <a href="/rock" target="_blank">Rock</a>
+          </li>
+          <li>
+            <a href="/paper" target="_blank">Paper</a>
+          </li>
+          <li>
+            <a href="/scissors" target="_blank">Scissors</a>
+          </li>
+        </ol>
+      </nav> -->
+    </body>
+  </head>
+</hmtl>
