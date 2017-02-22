@@ -1,0 +1,34 @@
+body {
+  margin: 0px auto;
+  border: none;
+  background-attachment: fixed;
+  background: url(http://topbrandsandproducts.com/wp-content/uploads/2016/08/pizza.jpeg) no-repeat bottom;
+  background-position: center top;
+  background-size: 100% auto;
+  vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: green;
+    font-family: Arial;
+    width: 20px;
+    margin: auto;
+    border-color: #6495ED;
+    border-style:dashed;
+    border-width: 3px;
+    background-color: #BCD2EE;
+}
+
+/*#header {
+  margin: 0px auto;
+  border: none;
+  background: url(http://topbrandsandproducts.com/wp-content/uploads/2016/08/pizza.jpeg) no-repeat bottom;
+  width: 1000px;
+  height: 100px;
+}*/
+
+
+/*.Pizza {
+  background-image: url(http://topbrandsandproducts.com/wp-content/uploads/2016/08/pizza.jpeg);
+}*/
