@@ -14,9 +14,9 @@ end
 
 def self.all()
   sql = "SELECT * FROM students;"
-  result = SqlRunner.run(sql)
-  results = result.map { |students| Student.new(students) }
-  return results
+  student = SqlRunner.run(sql)
+  result = student.map { |students| Student.new(students) }
+  return result
 end
 
 def self.find( id )
@@ -42,6 +42,10 @@ end
 
 def house()
   return "#{@house}" 
+end
+
+def find_house(id)
+  
 end
 
 end

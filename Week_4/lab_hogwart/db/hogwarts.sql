@@ -12,5 +12,6 @@ age INT2
 CREATE TABLE houses (
 id SERIAL4 PRIMARY KEY,
 house_name VARCHAR(255),
-logo VARCHAR(255)
+logo VARCHAR(255),
+student_id INT4 REFERENCES student(id)
 );

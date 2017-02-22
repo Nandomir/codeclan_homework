@@ -1,4 +1,5 @@
 require_relative('../models/student.rb')
+require_relative('../models/house.rb')
 require('pry')
 
 student1 = Student.new(
@@ -41,6 +42,30 @@ student2.save
 student3.save
 student4.save
 student5.save
+
+
+house1 = House.new(
+{ "house_name" => "Gryffindor",
+  "logo" => "http://i00.i.aliimg.com/wsphoto/v0/767030200/Harry-Potter-font-b-Gryffindor-b-font-Shcool-Logo-Multicolour-Tattoo-For-Body-Painting-Nontoxic-And.jpg"
+})
+house2 = House.new(
+{ "house_name" => "Ravenclaw",
+  "logo" => "http://images.esellerpro.com/2903/I/615/62/lrgscalePE60401ACCPOS-HARRY-POTTER-Magnet-Ravenclaw-Crest.jpg"
+})
+house3 = House.new(
+{ "house_name" => "Hufflepuff",
+  "logo" => "http://images.esellerpro.com/2903/I/615/61/lrgscalePE60311ACCPOS-HARRY-POTTER-Magnet-Hufflepuff-Crest.jpg"
+})
+house4 = House.new(
+{ "house_name" => "Slytherin",
+  "logo" => "http://images.esellerpro.com/2903/I/615/63/lrgscalePE60421ACCPOS-HARRY-POTTER-Magnet-Slytherin-Crest.jpg"
+})
+
+house1.save
+house2.save
+house3.save
+house4.save
+
 
 
 binding.pry
