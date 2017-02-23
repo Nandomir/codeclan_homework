@@ -3,14 +3,14 @@ require_relative('./house.rb')
 
 class Student
 
-attr_reader :id, :first_name, :last_name, :house, :age
+attr_reader :id, :first_name, :last_name, :house_id, :age
 
 
 def initialize( options )
   @id = options['id'].to_i
   @first_name = options['first_name']
   @last_name = options['last_name']
-  @house = options['house']
+  @house_id = options['house_id']
   @age = options['age'].to_i
 end
 
@@ -36,7 +36,7 @@ end
 
 
 def save()
-  sql = "INSERT INTO students ( first_name, last_name, house, age ) VALUES ('#{first_name}', '#{last_name}', '#{house}', #{age}) RETURNING *;"
+  sql = "INSERT INTO students ( first_name, last_name, house_id, age ) VALUES ('#{first_name}', '#{last_name}', #{house_id}, #{age}) RETURNING *;"
   student_array = SqlRunner.run(sql)
   @id = student_array.first['id'].to_i
 end
@@ -50,11 +50,11 @@ def age()
 end
 
 def house()
-  return "#{@house}" 
+  return "#{@house_id}" 
 end
 
 def find_house()
-sql = "SELECT * FROM houses WHERE house_name = '#{@house}';"
+sql = "SELECT * FROM houses WHERE house_name = '#{@house_id}';"
 result = SqlRunner.run(sql)
 hash_of_houses = result[0]
 house = House.new(hash_of_houses)

@@ -14,3 +14,7 @@ id SERIAL4 PRIMARY KEY,
 house_name VARCHAR(255),
 logo VARCHAR(255)
 );
+
+ALTER TABLE students DROP COLUMN house;
+ALTER TABLE students ADD COLUMN house_id INT4
+ALTER TABLE students ADD FOREIGN KEY (house_id) REFERENCES houses.id
