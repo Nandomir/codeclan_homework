@@ -46,7 +46,7 @@ student5.save
 
 house1 = House.new(
 { "house_name" => "Gryffindor",
-  "logo" => "http://i00.i.aliimg.com/wsphoto/v0/767030200/Harry-Potter-font-b-Gryffindor-b-font-Shcool-Logo-Multicolour-Tattoo-For-Body-Painting-Nontoxic-And.jpg"
+  "logo" => " "
 })
 house2 = House.new(
 { "house_name" => "Ravenclaw",

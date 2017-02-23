@@ -1,8 +1,10 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./house.rb')
 
 class Student
 
 attr_reader :id, :first_name, :last_name, :house, :age
+
 
 def initialize( options )
   @id = options['id'].to_i
@@ -11,6 +13,12 @@ def initialize( options )
   @house = options['house']
   @age = options['age'].to_i
 end
+
+def self.delete_all()
+  sql = "DELETE FROM students;"
+  SqlRunner.run(sql)
+end
+
 
 def self.all()
   sql = "SELECT * FROM students;"
@@ -25,6 +33,7 @@ def self.find( id )
   result = Student.new( student.first )
   return result
 end
+
 
 def save()
   sql = "INSERT INTO students ( first_name, last_name, house, age ) VALUES ('#{first_name}', '#{last_name}', '#{house}', #{age}) RETURNING *;"
@@ -44,8 +53,12 @@ def house()
   return "#{@house}" 
 end
 
-def find_house(id)
-  
+def find_house()
+sql = "SELECT * FROM houses WHERE house_name = '#{@house}';"
+result = SqlRunner.run(sql)
+hash_of_houses = result[0]
+house = House.new(hash_of_houses)
+return house
 end
 
 end

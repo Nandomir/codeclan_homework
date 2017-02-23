@@ -11,3 +11,9 @@ end
 get '/student/new' do
   erb(:new)
 end
+
+post '/student' do
+  @students = Student.new(params)
+  @students.save
+  erb(:create)
+end

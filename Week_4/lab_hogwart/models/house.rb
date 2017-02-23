@@ -8,13 +8,17 @@ class House
     @id = options['id'].to_i
     @house_name = options['house_name']
     @logo = options['logo']
-    @student_id = options['student_id'].to_i
   end
 
   def save()
     sql = "INSERT INTO houses ( house_name, logo ) VALUES ('#{house_name}', '#{logo}') RETURNING *;"
     house_array = SqlRunner.run(sql)
     @id = house_array.first['id'].to_i
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM houses;"
+    SqlRunner.run(sql)
   end
 
   def self.find( id )
@@ -30,5 +34,6 @@ class House
     result = house.map { |houses| House.new(houses) }
     return result
   end
+
 
 end
