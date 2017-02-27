@@ -1,0 +1,10 @@
+<a href="/">Back to main site</a>
+
+<% @exoplanets.each do |exoplanet| %>
+<p>Name: <%= exoplanet.name %></p>
+<p>Type: <%= exoplanet.type %></p>
+<p>Habitable: <%= exoplanet.habitable %></p>
+<p>Mass: <%= exoplanet.mass %> </p>
+<p>Discovery: <%= exoplanet.discovery%></p>
+</hr>
+<%end%>
