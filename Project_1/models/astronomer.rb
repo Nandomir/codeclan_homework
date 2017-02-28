@@ -2,16 +2,17 @@ require_relative('../db/sql_runner.rb')
 
 class Astronomer
 
-attr_reader :id, :name, :observation_type
+attr_reader :id
+attr_accessor :discoverer, :observation_type
 
 def initialize ( options )
   @id = options['id'].to_i if options['id']
-  @name = options['name']
+  @discoverer = options['discoverer']
   @observation_type = options['observation_type']
 end
 
   def save()
-    sql = "INSERT INTO astronomers (name, observation_type) VALUES ('#{@name}', '#{@observation_type}') RETURNING *;"
+    sql = "INSERT INTO astronomers (discoverer, observation_type) VALUES ('#{@discoverer}', '#{@observation_type}') RETURNING *;"
     result = SqlRunner.run(sql)
     @id = result[0]['id'].to_i
   end
@@ -33,5 +34,8 @@ end
     return Astronomer.new(data.first)
   end
 
-
+  def update()
+    sql = "UPDATE astronomers SET (discoverer, observation_type) = ('#{@discoverer}', '#{@observation_type}') WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
 end

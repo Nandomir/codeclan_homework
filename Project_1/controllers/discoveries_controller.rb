@@ -6,9 +6,6 @@ require_relative('../models/astronomer.rb')
 require('pry-byebug')
 
 get '/discoveries' do
-  @discoveries = Discovery.detection()
-
-  # @discover_data = DiscoverData.gather(@discoveries)
-
+  @detections = Discovery.detections()
   erb(:"discoveries/index")
 end

@@ -10,27 +10,27 @@ Exoplanet.delete_all
 
 
 astronomer1 = Astronomer.new({
-  'name' => 'Michel Mayor',
+  'discoverer' => 'Michel Mayor',
   'observation_type' => 'Doppler spectroscopy'
   });
 astronomer2 = Astronomer.new({
-  'name' => 'Kepler Space Telescope',
+  'discoverer' => 'Kepler Space Telescope',
   'observation_type' => 'Photometry/Transit'
   });
 astronomer3 = Astronomer.new({
-  'name' => 'Spitzer Space Telescope',
+  'discoverer' => 'Spitzer Space Telescope',
   'observation_type' => 'Infrared wavelengths/microlensing'
   });
 astronomer4 = Astronomer.new({
-  'name' => 'La Silla Observatory',
+  'discoverer' => 'La Silla Observatory',
   'observation_type' => 'Visible wavelengths using active optics'
   });
 astronomer5 = Astronomer.new({
-  'name' => 'Hubble Space Telescope',
+  'discoverer' => 'Hubble Space Telescope',
   'observation_type' => 'Visible and ultraviolet wavelengths'
   });
 astronomer6 = Astronomer.new({
-  'name' => 'Trans-Atlantic Exoplanet Survey (TrES)',
+  'discoverer' => 'Trans-Atlantic Exoplanet Survey (TrES)',
   'observation_type' => 'Photometry/Transit'
   })
 

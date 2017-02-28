@@ -2,7 +2,8 @@ require_relative('../db/sql_runner.rb')
 
 class Exoplanet
 
-attr_reader :id, :name, :type, :habitable, :mass, :discovery
+attr_reader :id
+attr_accessor :name, :type, :habitable, :mass, :discovery
 
 def initialize( options )
   @id = options['id'].to_i if options['id']
@@ -40,6 +41,11 @@ def self.find(id)
   sql = "SELECT * FROM exoplanets WHERE id = #{id}"
   data = SqlRunner.run(sql).first
   return Exoplanet.new(data)
+end
+
+def update()
+  sql = "UPDATE exoplanets SET (name, type, habitable, mass, discovery) = ('#{@name}', '#{@type}', #{@habitable}, #{mass}, '#{discovery}') WHERE id = #{@id};"
+  SqlRunner.run(sql)
 end
 
 end
