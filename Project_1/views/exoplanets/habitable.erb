@@ -1,0 +1,9 @@
+<a href="/">Main site</a>
+
+<% @exoplanet.each do |exoplanet| %>
+<p>Name: <%= exoplanet.name%></p>
+<p>Type: <%= exoplanet.type %></p>
+<p>Mass: <%= exoplanet.mass %></p>
+<p>Discovery: <%= exoplanet.discovery %></p>
+</hr>
+<%end%>

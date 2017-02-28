@@ -1,10 +1,13 @@
-<a href="/">Back to main site</a>
+<a href="/">Main site</a>
 
 <% @exoplanets.each do |exoplanet| %>
-<p>Name: <%= exoplanet.name %></p>
+<p>Name: <a href="/exoplanets/<%= exoplanet.id %>"><%= exoplanet.name %></a></p>
 <p>Type: <%= exoplanet.type %></p>
 <p>Habitable: <%= exoplanet.habitable %></p>
 <p>Mass: <%= exoplanet.mass %> </p>
 <p>Discovery: <%= exoplanet.discovery%></p>
 </hr>
 <%end%>
+
+
+<p><a href="/exoplanets/new">Add an exoplanet</a></p>

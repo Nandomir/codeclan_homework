@@ -20,6 +20,6 @@ discovery DATE
 
 CREATE TABLE discoveries (
 id SERIAL4 PRIMARY KEY,
-astronomer_id INT4 REFERENCES astronomers(id),
-exoplanet_id INT4 REFERENCES exoplanets(id)
+astronomer_id INT4 REFERENCES astronomers(id) ON DELETE CASCADE,
+exoplanet_id INT4 REFERENCES exoplanets(id) ON DELETE CASCADE
 );

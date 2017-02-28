@@ -1,0 +1,29 @@
+<a href="/">Main site</a>
+<h1>Add an exoplanet</h1>
+<form method="post" action="/exoplanets">
+  <label for="name">Planet's name:</label>
+  <input type="text" id="name" name="name"/>
+
+  <label for="type">Type:</label>
+  <select id="type" name="type">
+    <option value="Hot Jupiter">Hot Jupiter</option>
+    <option value="Mini Neptune">Mini Neptune</option>
+    <option value="Rocky">Rocky</option>
+    <option value="Super Earth">Super earth</option>
+  </select>
+
+    <label for="habitable">Potentially habitable:</label>
+    <select id="habitable" name="habitable">
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select>
+
+    <label for="mass">Mass</label>
+    <input type="number" step=0.01 min=0 name="mass">
+
+    <label for="discovery">Discovery date</label>
+    <input type="date" id="discovery" name="discovery">
+
+  <input type="submit" name="Add an exoplanet"/>
+
+</form>

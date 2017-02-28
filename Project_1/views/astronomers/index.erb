@@ -1,6 +1,9 @@
-<a href="/">Back to main site</a>
-<% @astronomers.each do |astronomer| %>
-<p>Name: <%= astronomer.discoverer %></p>
+<a href="/">Main site</a>
+
+<% @astronomer.each do |astronomer| %>
+<p>Name: <a href="/astronomers/<%= astronomer.id %>"><%= astronomer.discoverer %></a></p>
 <p>Observation type: <%= astronomer.observation_type %></p>
 </hr>
 <%end%>
+
+<p><a href="/astronomers/new">Add an observerer</a></p>

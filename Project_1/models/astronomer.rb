@@ -35,7 +35,12 @@ end
   end
 
   def update()
-    sql = "UPDATE astronomers SET (discoverer, observation_type) = ('#{@discoverer}', '#{@observation_type}') WHERE id = #{@id};"
+    sql = "UPDATE astronomers SET (discoverer, observation_type) = ('#{@discoverer}', '#{@observation_type}') WHERE id = '#{@id}';"
     SqlRunner.run(sql)
+  end
+
+  def delete()
+    sql = "DELETE FROM astronomers WHERE id=#{@id};"
+    SqlRunner.run( sql )
   end
 end

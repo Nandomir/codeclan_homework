@@ -1,0 +1,19 @@
+<a href="/">Main site</a>
+
+<form method="post" action="/astronomers">
+
+<label for="discoverer">Full name of a observatory or an astronomer:</label>
+<input type="text" id="discoverer" name="discoverer"/>
+
+<label for="observation_type">Select type of observation:</label>
+<select id="observation_type" name="observation_type">
+  <option value="doppler_spectroscopy">Doppler spectroscopy</option>
+  <option value="photometry/transit">Photometry/Transit</option>
+  <option value="infrared_wavelengths">Infrared wavelengths</option>
+  <option value="microlensing">Micolensing</option>
+  <option value="visible_wavelengths">Visible wavelengths</option>
+  <option value="ultraviolet_wavelengths">Ultraviolet wavelengths</option>
+</select>
+
+<input type="submit" value="Add observatory/astronomer"/>
+</form>

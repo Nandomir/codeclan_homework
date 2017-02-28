@@ -15,7 +15,7 @@ def initialize( options )
 end
 
 def save()
-  sql = "INSERT INTO exoplanets (name, type, habitable, mass, discovery) VALUES ('#{@name}', '#{@type}', #{@habitable}, #{mass}, '#{discovery}') RETURNING *;"
+  sql = "INSERT INTO exoplanets (name, type, habitable, mass, discovery) VALUES ('#{@name}', '#{@type}', '#{@habitable}', #{mass}, '#{discovery}') RETURNING *;"
   data = SqlRunner.run(sql)
   @id = data[0]['id'].to_i
 end
@@ -44,8 +44,18 @@ def self.find(id)
 end
 
 def update()
-  sql = "UPDATE exoplanets SET (name, type, habitable, mass, discovery) = ('#{@name}', '#{@type}', #{@habitable}, #{mass}, '#{discovery}') WHERE id = #{@id};"
+  sql = "UPDATE exoplanets SET
+        name = '#{@name}',
+        type = '#{@type}',
+        mass = #{@mass},
+        discovery = '#{@discovery}' 
+        WHERE id = #{@id};"
   SqlRunner.run(sql)
+end
+
+def delete()
+  sql = "DELETE FROM exoplanets WHERE id=#{@id};"
+  SqlRunner.run( sql )
 end
 
 end

@@ -4,8 +4,7 @@ require_relative('./detection.rb')
 
 class Discovery
 
-attr_reader :id
-attr_accessor :astronomer_id, :exoplanet_id
+attr_accessor :id, :astronomer_id, :exoplanet_id
 
 def initialize( options )
   @id = options['id'].to_i if options['id']
@@ -58,7 +57,7 @@ def self.detections()
 end
 
 def update()
-  sql = "UPDATE discoveries SET (astronomer_id, exoplanet_id) = (#{astronomer_id}, #{exoplanet_id}) WHERE id = #{@id}"
+  sql = "UPDATE discoveries SET (astronomer_id, exoplanet_id) = (#{astronomer_id}, #{exoplanet_id}) WHERE id = '#{@id}'"
   SqlRunner.run(sql)
 end
 end
