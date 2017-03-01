@@ -4,7 +4,8 @@ require_relative('./detection.rb')
 
 class Discovery
 
-attr_accessor :id, :astronomer_id, :exoplanet_id
+attr_reader :id
+attr_accessor :astronomer_id, :exoplanet_id
 
 def initialize( options )
   @id = options['id'].to_i if options['id']
@@ -29,6 +30,11 @@ def self.delete_all()
   SqlRunner.run(sql)
 end
 
+def update()
+  sql = "UPDATE discoveries SET (astronomer_id, exoplanet_id) = (#{astronomer_id}, #{exoplanet_id}) WHERE id = '#{@id}'"
+  SqlRunner.run(sql)
+end
+
 def self.delete(id)
   sql = "DELETE FROM discoveries WHERE id = #{id};"
   SqlRunner.run(sql)
@@ -48,8 +54,18 @@ def self.detections()
         return data.map{|discoveries| Detection.new(discoveries)}
 end
 
-def update()
-  sql = "UPDATE discoveries SET (astronomer_id, exoplanet_id) = (#{astronomer_id}, #{exoplanet_id}) WHERE id = '#{@id}'"
-  SqlRunner.run(sql)
+def self.find_detection(id)
+  sql = "SELECT 
+        a.discoverer AS discoverer, a.observation_type,
+        e.name AS planet, e.type, e.habitable, e.mass, e.discovery
+        FROM discoveries d
+        INNER JOIN astronomers a 
+        ON a.id = d.astronomer_id
+        INNER JOIN exoplanets e
+        ON e.id = d.exoplanet_id
+        WHERE d.id = #{id};"
+  first_detection = SqlRunner.run(sql).first
+  return Detection.new(first_detection)
 end
+
 end
