@@ -5,9 +5,10 @@ require_relative('./exoplanet.rb')
 
 class Detection
 
-attr_reader :discoverer, :observation_type, :planet, :type, :habitable, :mass, :discovery
+attr_reader :discovery_id, :discoverer, :observation_type, :planet, :type, :habitable, :mass, :discovery
 
 def initialize( options )
+  @discovery_id = options['discovery_id'] 
   @discoverer = options['discoverer']
   @observation_type = options['observation_type']
   @planet = options['planet']

@@ -1,7 +1,7 @@
 <a href="/">Main site</a>
 
 <% @detections.each do |detection| %>
-<p>Discoverer: <%= detection.discoverer %></p>
+<p>Discoverer: <a href="/discoveries/<%= detection.discovery_id %>"><%= detection.discoverer %></a></p>
 <p>Observation Type: <%= detection.observation_type%></p>
 <p>Planet: <%= detection.planet %></p>
 <p>Planet Type: <%= detection.type %></p>

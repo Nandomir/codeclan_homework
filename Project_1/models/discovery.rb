@@ -34,17 +34,9 @@ def self.delete(id)
   SqlRunner.run(sql)
 end
 
-# def self.astronomer()
-#   sql = "SELECT * FROM astronomers a
-#         INNER JOIN discoveries d
-#         ON d.astronomer_id = a.id
-#         WHERE a.id = #{@astronomer_id};"
-#   results = SqlRunner.run(sql).first
-#   return Discovery.new(results)
-# end
-
 def self.detections()
   sql = "SELECT 
+        d.id AS discovery_id,
         a.discoverer AS discoverer, a.observation_type,
         e.name AS planet, e.type, e.habitable, e.mass, e.discovery
         FROM discoveries d

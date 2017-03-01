@@ -9,3 +9,18 @@ get '/discoveries' do
   @detections = Discovery.detections()
   erb(:"discoveries/index")
 end
+
+get '/discoveries/:id' do
+  @discovery = Discovery.find(params[:id].to_i)
+  erb(:"discoveries/show")
+end
+
+# get '/discoveries:id' do
+#   @detections = Discovery
+# end
+
+# post '/discoveries/:id/delete' do
+#   @discovery = Discovery.find(params[:id])
+#   @discovery.delete()
+#     redirect to '/discoveries'
+# end
