@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Exoplanets!</title>
+  <title>Exoplanets catalogue</title>
+  <link rel="icon" href="/images/planetary_system.png"/>
+  <link rel="stylesheet" type="text/css" href="/style/style.css".>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="/astronomers">List of observatories</a></li>
-      <li><a href="/exoplanets">Known exoplanets</a></li>
-      <li><a href="/exoplanets/habitable">Potentially habitable planets</a></li>
-      <li><a href="/discoveries">Discoveries</a></li>
-    </ul>
-  </nav>
-  <%= yield %>
+
+  <div id="container">
+    <div id="header">
+      <h1>Exoplanet catalogue</h1>
+      <p>Welcome to the extra-solar planets catalogue, where you can find a list of both known observatories and exoplanets.</p>
+    </div>    
+    <div id="content">
+      <div id="nav">
+          <ul>
+            <li><a class="round-button" href="/astronomers">Observatories</a></li>
+            <li><a class="round-button2" href="/exoplanets">Known exoplanets</a></li>
+            <li><a class="round-button3" href="/exoplanets/habitable">Habitable zone planets</a></li>
+            <li><a class="round-button4" href="/discoveries">Confirmed detections</a></li>
+
+          </ul>
+      </div>
+      <div id="main">
+        <%= yield %>
+      </div>
+    </div>
+    <div id="footer">
+      <p>Project 1 Codeclan &copy; 2017 Ferdinando Sendyka</p>
+    </div>
+  </div>
+
 </body>
 </html>

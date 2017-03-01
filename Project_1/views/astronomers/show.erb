@@ -4,6 +4,10 @@
 <p>Observation type: <%= @astronomer.observation_type %></p>
 </hr>
 
+<form method="get" action="/astronomers/<%= @astronomer.id %>/edit">
+<input type="submit" value="Edit planet data">
+</form>
+
 <form method="post" action="/astronomers/<%= @astronomer.id %>/delete">
 <input type="submit" value="Delete observerer">
 </form>
