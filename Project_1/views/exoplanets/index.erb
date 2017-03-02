@@ -1,13 +1,26 @@
-<a href="/">Main site</a>
+<a class="main" href="/">Main site</a>
 
-<% @exoplanets.each do |exoplanet| %>
-<p>Name: <a href="/exoplanets/<%= exoplanet.id %>"><%= exoplanet.name %></a></p>
-<p>Type: <%= exoplanet.type %></p>
-<p>Habitable: <%= exoplanet.habitable %></p>
-<p>Mass: <%= exoplanet.mass %> </p>
-<p>Discovery: <%= exoplanet.discovery%></p>
-</hr>
+<link rel="stylesheet" type="text/css" href="/style/style.css"/>
+<br>
+<table>
+<br>
+<tr>
+  <th class="first_row">NAME</th>
+  <th class="first_row">TYPE</th>
+  <th class="first_row">HABITABLE</th>
+  <th class="first_row">MASS</th>
+  <th class="first_row">DISCOVERY</th>
+</tr>
+<tr>
+  <% @exoplanets.each do |exoplanet| %>
+<td><a href="/exoplanets/<%= exoplanet.id %>"><%= exoplanet.name %></a></td>
+<td><%= exoplanet.type %></td>
+<td><%= exoplanet.habitable %></td>
+<td><%= exoplanet.mass %></td>
+<td><%= exoplanet.discovery%></td>
+</tr>
 <%end%>
+</table>
 
 
-<p><a href="/exoplanets/new">Add an exoplanet</a></p>
+<p><a class="add" href="/exoplanets/new">Add an exoplanet</a></p>

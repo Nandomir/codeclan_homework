@@ -1,4 +1,4 @@
-<a href="/">Main site</a>
+<a class="main" href="/">Main site</a>
 
 <p>Name: <%= @exoplanet.name%></p>
 <p>Type: <%= @exoplanet.type %></p>
@@ -7,9 +7,11 @@
 </hr>
 
 <form method="get" action="/exoplanets/<%= @exoplanet.id %>/edit">
-<input type="submit" value="Edit planet data">
+<input class="submit" type="submit" value="Edit planet data">
 </form>
 
+<br>
+
 <form method="post" action="/exoplanets/<%= @exoplanet.id %>/delete">
-<input type="submit" value="Delete exoplanet">
+<input class="delete" type="submit" value="Delete exoplanet">
 </form>

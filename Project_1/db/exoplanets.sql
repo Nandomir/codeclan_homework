@@ -5,13 +5,13 @@ DROP TABLE if exists astronomers;
 
 CREATE TABLE astronomers (
 id SERIAL4 PRIMARY KEY,
-discoverer VARCHAR(255),
+discoverer VARCHAR(255) not null,
 observation_type VARCHAR(255)
 );
 
 CREATE TABLE exoplanets (
 id SERIAL4 PRIMARY KEY,
-name VARCHAR(255),
+name VARCHAR(255) not null,
 type VARCHAR(255),
 habitable BOOLEAN,
 mass FLOAT(1),

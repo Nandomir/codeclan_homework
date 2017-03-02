@@ -1,9 +1,12 @@
-<a href="/">Main site</a>
+<a class="main" href="/">Main site</a>
 
 <form method="post" action="/astronomers/<%= @astronomer.id %>">
+<br>
 
 <label for="discoverer">Full name of a observatory or an astronomer:</label>
 <input type="text" id="discoverer" name="discoverer" value="<%= @astronomer.discoverer %>"/>
+<br>
+<br>
 
 <label for="observation_type">Select type of observation:</label>
 <select id="observation_type" name="observation_type">
@@ -14,6 +17,8 @@
   <option <%= "selected" if (@astronomer.observation_type == "Visible Wavelengths") %> value="Visible Wavelengths">Visible wavelengths</option>
   <option <%= "selected" if (@astronomer.observation_type == "Ultraviolet Wavelengths") %> value="Ultraviolet Wavelengths">Ultraviolet wavelengths</option>
 </select>
+<br>
+<br>
 
-<input type="submit" value="Edit observatory/astronomer"/>
+<input class="submit" type="submit" value="Update"/>
 </form>
