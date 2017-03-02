@@ -4,15 +4,15 @@
 <br>
 <table>
 <br>
-<tr>
-  <th class="first_row">NAME</th>
-  <th class="first_row">OBSERVATION TYPE</th>
-</tr>
-<tr>
+  <tr>
+    <th class="first_row">NAME</th>
+    <th class="first_row">OBSERVATION TYPE</th>
+  </tr>
+  <tr>
   <% @astronomer.each do |astronomer| %>
-  <td><a href="/astronomers/<%= astronomer.id %>"><%= astronomer.discoverer %></a></td>
-  <td><%= astronomer.observation_type %></td>
-</tr>
+    <td><a href="/astronomers/<%= astronomer.id %>"><%= astronomer.discoverer %></a></td>
+    <td><%= astronomer.observation_type %></td>
+  </tr>
 <%end%>
 </table>
 

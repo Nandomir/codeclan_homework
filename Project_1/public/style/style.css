@@ -34,7 +34,7 @@ a:hover {
   border-radius: 50%;
   background-color: #464646;
   color: white;
-  width: 800px;
+  width: 900px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
@@ -45,7 +45,7 @@ a:hover {
 
 #container {
   background-color: transparent;
-  width: 900px;
+  width: 1200px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -90,7 +90,7 @@ a:hover {
   background-color: #464646;
   color: white;
   text-align: center;
-  width: 800px;
+  width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -196,7 +196,7 @@ a:hover {
 table {
   font-family: arial;
   border-collapse: collapse;
-  width: 90%;
+  width: 100%;
 }
 
 td, th {

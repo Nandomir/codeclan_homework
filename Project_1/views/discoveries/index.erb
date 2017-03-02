@@ -1,12 +1,27 @@
 <a class="main" href="/">Main site</a>
 
-<% @detection.each do |detection| %>
-<p>Discoverer: <a href="/discoveries/<%= detection.discovery_id %>"><%= detection.discoverer %></a></p>
-<p>Observation Type: <%= detection.observation_type%></p>
-<p>Planet: <%= detection.planet %></p>
-<p>Planet Type: <%= detection.type %></p>
-<p>Habitable: <%= detection.habitable %></p>
-<p>Mass: <%= detection.mass %></p>
-<p>Discovery date: <%= detection.discovery %></p>
-</hr>
-<%end%>
+<link rel="stylesheet" type="text/css" href="/style/style.css"/>
+<br>
+<table>
+<br>
+  <tr>
+    <th class="first_row">NAME</th>
+    <th class="first_row">OBSERVATION TYPE</th>
+    <th class="first_row">PLANET</th>
+    <th class="first_row">TYPE</th>
+    <th class="first_row">HABITABLE</th>
+    <th class="first_row">MASS</th>
+    <th class="first_row">DISCOVERY</th>
+  </tr>
+  <tr>
+  <% @detection.each do |detection| %>
+    <td><a href="/discoveries/<%= detection.discovery_id %>"><%= detection.discoverer %></a></td>
+    <td><%= detection.observation_type%></td>
+    <td><%= detection.planet %></td>
+    <td><%= detection.type %></td>
+    <td><%= detection.habitable %></td>
+    <td><%= detection.mass %></td>
+    <td><%= detection.discovery %></td>
+  </tr>
+  <%end%>
+</table>
